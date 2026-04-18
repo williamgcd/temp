@@ -38,3 +38,11 @@ Groups are created as use cases are written — no empty folders up front.
 - [receive-booking-request](./02-schedule/receive-booking-request.md) — Inbound. Self-serve link público + WhatsApp (tier Silvia).
 - [manage-availability](./02-schedule/manage-availability.md) — Working hours, blocks, holidays.
 - [configure-policies](./02-schedule/configure-policies.md) — Lembretes, janelas, fees, depósito, buffers, granularidade, duração default, sobreposição.
+
+### 03-clients
+- [see-client-list](./03-clients/see-client-list.md) — **Read** (lista). Busca, filtros (sumiram, aniversariantes, com pacote), ordenação.
+- [see-client-detail](./03-clients/see-client-detail.md) — **Read** (perfil). Hub com histórico, journal, pacotes, financeiro; agregador `client.get_full`.
+- [manage-client](./03-clients/manage-client.md) — **C + U + D**. Criar manual, importar (contatos / CSV), editar, arquivar, bloquear.
+- [journal-entry](./03-clients/journal-entry.md) — **C** em `client-journal`. Notas, fotos, medições, lembretes; voz-pra-journal no tier Silvia.
+- [merge-clients](./03-clients/merge-clients.md) — Dedupe. Auto-detect + merge review + unmerge dentro de 7 dias.
+- [assign-package](./03-clients/assign-package.md) — Grant + redenção de `client-package`; integra com `finance-invoice`.

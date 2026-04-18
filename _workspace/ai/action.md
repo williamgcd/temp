@@ -63,6 +63,25 @@ Close the loop between AI and the business: the AI can not just report, but take
 - `suggest_min_advance_window` — short-notice surprises → propose `advance_booking_min_hours`.
 - `suggest_reschedule_policy` — frequent reschedules → propose `reschedule_window_hours` + fee.
 - `suggest_reminder_timing` — observed correlation between lead time and show-rate → propose changing `reminder_hours_before`.
+- `block_suggestion` — client with N consecutive no-shows → propose blocking (never auto-executes).
+- `suggest_merge_on_duplicate` — dupes detected → suggest merge in feed.
+- `data_enrichment_prompt` — clients missing email/phone/birthday after N appointments → ask to fill.
+
+### Clients / journal
+
+- `unknown_number_reachout` — inbound WhatsApp from unknown phone → ask if Silvia should save as client.
+- `pre_appointment_brief` — push 30min before each booking with client context.
+- `birthday_batch` — daily/monthly batch of birthday messages (proposes drafts).
+- `churn_alert` — periodic dormant-client report.
+- `voice_to_journal` — Sabriza sends audio → Silvia transcribes + journals.
+- `post_appointment_prompt` — after `booking.completed`, ask if she wants to journal anything.
+- `journal_reminder_fire` — when `client_journal.reminder_due` fires, surface the reminder + propose follow-up booking.
+
+### Packages
+
+- `auto_redeem_suggestion` — on `booking.completed`, propose redeeming a covering package.
+- `package_expiration_warning` — 15d before expiry with balance, propose messaging client.
+- `package_upsell` — on package consumed, propose offering a renewal.
 
 ## Consumed by
 

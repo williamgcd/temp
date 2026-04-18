@@ -15,7 +15,9 @@ The unit that ties together client, service, staff, resource, and time. The most
 
 ## Data model
 
-- `schedule_booking`: `id`, `workspace_id`, `client_id`, `service_id?`, `staff_user_id?`, `resource_id?`, `starts_at`, `ends_at`, `status`, `source`, `notes?`, `created_at`.
+- `schedule_booking`: `id`, `workspace_id`, `client_id`, `service_id?`, `staff_user_id?`, `resource_id?`, `starts_at`, `ends_at`, `status`, `source`, `notes?`, `redeemed_package_id?`, `created_at`.
+
+`redeemed_package_id` links a `client_package` when the booking was paid for by package balance instead of a fresh invoice. Set on `complete` if the user opted to use a package.
 
 `status` ∈ `booked`, `pending_confirmation`, `confirmed`, `completed`, `cancelled`, `no_show`.
 

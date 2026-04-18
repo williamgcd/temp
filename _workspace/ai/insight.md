@@ -19,9 +19,21 @@ Surface non-obvious findings to the operator: revenue trends, churn signals, und
 
 ## Public API
 
-- `ai_insight.generate({ workspace_id, topic? })`
-- `ai_insight.list({ workspace_id, status? })`
+- `ai_insight.generate({ workspace_id, topic?, scope? })`
+- `ai_insight.list({ workspace_id, status?, topic? })`
 - `ai_insight.update_status(id, status)`
+
+## Example topics
+
+- `daily_snapshot` — start-of-day agenda summary.
+- `evening_recap` — end-of-day performance.
+- `weekly_summary` — week close-out.
+- `empty_day_alert` — upcoming low-utilization day.
+- `client_summary` — one-cliente summary used in client detail header (`silvia_summary`).
+- `duplicate_clients_suggestion` — candidate dupes detected.
+- `churn_alert` — clients dormant beyond pattern.
+- `top_clients` — periodic list by frequency / revenue.
+- `service_profitability` — per-service margin observation.
 
 ## Events emitted
 
