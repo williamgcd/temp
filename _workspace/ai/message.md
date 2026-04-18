@@ -32,6 +32,16 @@ Draft and (optionally) auto-send outbound messages to clients — appointment re
 - `_platform/llm-action`, `_workspace/ai-persona`, `_workspace/ai-setting`.
 - `_workspace/client`, external messaging provider.
 
+## Example intents
+
+- `booking_confirmation` — "Marquei pra quarta 15h, confirma?"
+- `booking_reminder` — "Lembrete: amanhã 15h com a Sabriza, unha."
+- `booking_reschedule_request` — "Tem como remarcar seu horário?"
+- `post_appointment_thanks` — "Obrigada pela visita!"
+- `reactivation_nudge` — "Faz 60 dias que você não vem."
+- `fiado_dunning` — "Lembrete amigável: R$ 80 pendente."
+- `campaign_copy` — drafts for `mkt-campaign`.
+
 ## Consumed by
 
 - `_workspace/mkt-campaign` (drafting campaign copy).

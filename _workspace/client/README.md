@@ -9,6 +9,7 @@ Who the workspace sells to. Distinct from `_platform/user`: a client may never s
 ## Responsibilities
 
 - Identity and contact (name, email, phone, address, birthday, pronouns).
+- Allow name-only creation; fill contact fields progressively via Silvia.
 - Dedupe within a workspace using verified email or phone.
 - Organization clients with child individuals.
 - Link to a platform `user` when the client logs into the client portal.
@@ -17,10 +18,14 @@ Who the workspace sells to. Distinct from `_platform/user`: a client may never s
 
 - `client`: `id`, `workspace_id`, `kind` (`individual`, `organization`), `name`, `email?`, `phone?`, `birthday?`, `address_json?`, `notes?`, `linked_user_id?`, `parent_client_id?`, `status` (`active`, `blocked`, `archived`), `created_at`.
 
+Only `name` is required on create. `email`, `phone`, and the rest are nullable and get filled in over time.
+
 ## Public API
 
-- `client.create({ workspace_id, ... })` / `client.update(id, patch)`
-- `client.find_or_create({ workspace_id, email | phone })`
+- `client.create({ workspace_id, name, ...optional })` — name-only accepted.
+- `client.update(id, patch)`
+- `client.find_or_create({ workspace_id, email | phone })` — dedupe by verified contact.
+- `client.find_or_create_by_name({ workspace_id, name })` — fuzzy name match (case-insensitive, accent-insensitive); creates when no confident match. Used by `schedule_booking.create_minimal`.
 - `client.block(id, reason)` / `client.archive(id)`
 - `client.link_user(id, user_id)`
 

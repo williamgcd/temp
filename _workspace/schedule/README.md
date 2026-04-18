@@ -9,7 +9,7 @@ Answer "is this slot bookable, for whom, with what resource?" — the authoritat
 ## Responsibilities
 
 - Define working hours per staff and per location.
-- Combine holidays, blockers, existing bookings, and buffers into a consolidated availability view.
+- Combine holidays, blockers, existing bookings, buffers, and policy into a consolidated availability view.
 - Expose slot proposal and conflict detection APIs used by booking flows.
 
 ## Data model
@@ -18,8 +18,8 @@ Answer "is this slot bookable, for whom, with what resource?" — the authoritat
 
 ## Public API
 
-- `schedule.available_slots({ workspace_id, service_id, staff_id?, resource_id?, date_range })`
-- `schedule.is_bookable({ staff_id, start, end, resource_id? })`
+- `schedule.available_slots({ workspace_id, service_id?, staff_id?, resource_id?, date_range })`
+- `schedule.is_bookable({ staff_id?, start, end, resource_id? })` — returns `{ ok, warnings[] }`. Hard rejects only for impossible ranges; overlaps/out-of-hours are warnings honoring `schedule-policy`.
 - `schedule.update_hours(owner_type, owner_id, working_hours)`
 
 ## Events emitted
@@ -29,7 +29,7 @@ Answer "is this slot bookable, for whom, with what resource?" — the authoritat
 ## Depends on
 
 - `_platform/workspace-config` (timezone, timeslot).
-- `_workspace/catalog-service`, `_workspace/resource`.
+- `_workspace/schedule-policy`, `_workspace/catalog-service`, `_workspace/resource`.
 - `_platform/workspace-member` (staff).
 
 ## Consumed by
@@ -39,6 +39,7 @@ Answer "is this slot bookable, for whom, with what resource?" — the authoritat
 ## Submodules
 
 - [schedule-booking](./booking.md)
+- [schedule-policy](./policy.md)
 - [schedule-waitlist](./waitlist.md)
 - [schedule-blocker](./blocker.md)
 - [schedule-holiday](./holiday.md)

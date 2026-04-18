@@ -32,3 +32,4 @@ Groups are created as use cases are written — no empty folders up front.
 
 ### 02-schedule
 - [create-appointment](./02-schedule/create-appointment.md) — Sabriza marca um atendimento em 3 toques; Silvia preenche o resto.
+- [see-the-schedule](./02-schedule/see-the-schedule.md) — Ver a agenda em 3 views (Lista, Dia, Mês); Silvia empurra snapshots no tier autônomo.
