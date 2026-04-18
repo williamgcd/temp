@@ -14,6 +14,7 @@ Documentation for the modular SaaS platform. The system is organized into three 
 
 - [Product](./docs/product.md) — audience, positioning, principles, pricing, onboarding, Silvia (the AI assistant).
 - [Personas](./docs/personas.md) — Sabriza, Júlia, Bianca. Who we're building for (solo/self BR beauty pros, v1).
+- [Use cases](./docs/use-cases/README.md) — concrete flows that drive module decisions, grouped by area.
 
 ## Module doc template
 
