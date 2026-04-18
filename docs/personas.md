@@ -6,7 +6,7 @@ Who we're building for. Every module doc and use case should reference these by 
 
 ---
 
-## Camila — atende em casa
+## Sabriza — atende em casa
 
 **One-liner**: autônoma que atende clientes no quartinho/sala de casa.
 
@@ -64,7 +64,7 @@ Who we're building for. Every module doc and use case should reference these by 
 
 ## Comparação rápida
 
-| | Camila | Júlia | Bianca |
+| | Sabriza | Júlia | Bianca |
 |---|---|---|---|
 | Espaço | casa | alugado/compartilhado | próprio |
 | Canal de cobrança principal | PIX | Cartão | Cartão parcelado + PIX |
@@ -77,12 +77,12 @@ Who we're building for. Every module doc and use case should reference these by 
 
 ## Upgrade path (fora do escopo v1)
 
-- **Rafa — contratou uma auxiliar**: Camila ou Bianca que cresceu e virou 2 pessoas. Primeiro degrau de multi-pro. Desbloqueia `workspace-member` + `finance-commission`.
+- **Rafa — contratou uma auxiliar**: Sabriza ou Bianca que cresceu e virou 2 pessoas. Primeiro degrau de multi-pro. Desbloqueia `workspace-member` + `finance-commission`.
 - **Salão completo**: 4+ profissionais, dono administra. Desbloqueia `workspace-relate` (rede), gestão de agenda em grade.
 
 ## Prioridade de design v1
 
-1. **Camila** — maior mercado, pior ferramenta atual, menos edge cases.
+1. **Sabriza** — maior mercado, pior ferramenta atual, menos edge cases.
 2. **Júlia** — desbloqueia `finance-commission` e reconciliação de maquininha.
 3. **Bianca** — desbloqueia pacote, depósito, follow-up automatizado.
 

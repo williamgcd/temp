@@ -12,7 +12,7 @@ Documentation for the modular SaaS platform. The system is organized into three 
 
 ## Design references
 
-- [Personas](./docs/personas.md) — Camila, Júlia, Bianca. Who we're building for (solo/self BR beauty pros, v1).
+- [Personas](./docs/personas.md) — Sabriza, Júlia, Bianca. Who we're building for (solo/self BR beauty pros, v1).
 
 ## Module doc template
 
