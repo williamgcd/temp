@@ -2,6 +2,8 @@
 
 Bookability rules and defaults for the workspace's schedule.
 
+> **Settings UI**: lives at "Agenda > Regras". Per-service overrides at "Catálogo > Serviço > Regras".
+
 ## Purpose
 
 Separate **"what is allowed"** (policies — overlap, windows, fees, buffers, slot granularity, default duration) from **"what is bookable"** (`schedule` — availability derived from hours/blockers/holidays). Policies change often as Sabriza learns her business; isolating them keeps audit and overrides clean.
@@ -16,7 +18,7 @@ Separate **"what is allowed"** (policies — overlap, windows, fees, buffers, sl
 
 ## Data model
 
-- `schedule_policy`: `workspace_id` (pk), `overlap_allowed`, `slot_granularity_minutes`, `default_duration_minutes`, `buffer_before_minutes`, `buffer_after_minutes`, `advance_booking_min_hours?`, `advance_booking_max_days?`, `reschedule_window_hours?`, `reschedule_fee_cents?`, `cancellation_window_hours?`, `cancellation_fee_cents?`, `no_show_fee_cents?`, `deposit_required`, `deposit_percent?`, `reminder_enabled`, `reminder_hours_before`, `updated_at`.
+- `schedule_policy`: `workspace_id` (pk), `overlap_allowed`, `slot_granularity_minutes`, `default_duration_minutes`, `buffer_before_minutes`, `buffer_after_minutes`, `advance_booking_min_hours?`, `advance_booking_max_days?`, `reschedule_window_hours?`, `reschedule_fee_cents?`, `cancellation_window_hours?`, `cancellation_fee_cents?`, `no_show_grace_minutes`, `no_show_fee_cents?`, `deposit_required`, `deposit_percent?`, `reminder_enabled`, `reminder_hours_before`, `updated_at`.
 - `schedule_policy_override`: `workspace_id`, `service_id` (pk together), partial subset of the fields above, `updated_at`.
 
 ### V1 defaults (applied at workspace creation)
@@ -34,6 +36,7 @@ Separate **"what is allowed"** (policies — overlap, windows, fees, buffers, sl
 | `reschedule_fee_cents` | `0` |
 | `cancellation_window_hours` | `null` |
 | `cancellation_fee_cents` | `0` |
+| `no_show_grace_minutes` | `30` |
 | `no_show_fee_cents` | `0` |
 | `deposit_required` | `false` |
 | `deposit_percent` | `null` |

@@ -40,6 +40,7 @@ The business domain. These are the modules end users interact with to run their 
 | [schedule](./schedule/README.md) | Core availability and calendar configuration for a workspace or professional. |
 | [schedule-booking](./schedule/booking.md) | A confirmed appointment between a client and a professional. |
 | [schedule-policy](./schedule/policy.md) | Bookability rules (overlap, windows, fees, buffers, slot granularity, default duration). |
+| [schedule-public-link](./schedule/public-link.md) | Public-facing booking link for clients to request appointments. |
 | [schedule-waitlist](./schedule/waitlist.md) | Queue of clients waiting for an opening in a full schedule slot. |
 | [schedule-blocker](./schedule/blocker.md) | Time block that marks a period as unavailable for new bookings. |
 | [schedule-holiday](./schedule/holiday.md) | Recurring or one-off closure that prevents bookings on specific days. |

@@ -16,6 +16,8 @@ Carve out time for breaks, personal appointments, equipment downtime, or trainin
 
 - `schedule_blocker`: `id`, `workspace_id`, `scope` (`workspace`, `staff`, `resource`), `scope_id?`, `reason`, `starts_at`, `ends_at`, `rrule?`, `created_by`, `created_at`.
 
+`reason` is a free-form string. Common presets surfaced in UI as suggestions: `almoço`, `consulta`, `pessoal`, `manutenção`, `folga`, `evento`. Not an enum — Sabriza can type anything.
+
 ## Public API
 
 - `schedule_blocker.create(...)` / `schedule_blocker.update(id, patch)` / `schedule_blocker.delete(id)`

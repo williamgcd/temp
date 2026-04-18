@@ -41,8 +41,10 @@ Everything else is optional at create time:
 - `schedule_booking.create_minimal({ workspace_id, client_name | client_id, starts_at, duration_minutes?, source })` — the 3-tap path. Runs `client.find_or_create_by_name` when `client_name` is passed, then `create` with defaults filled from `schedule-policy`.
 - `schedule_booking.list({ workspace_id, date_from, date_to, client_id?, staff_id?, service_id?, status? })` — powers every schedule view (list/day/week/month).
 - `schedule_booking.get(id)`
+- `schedule_booking.update(id, patch)` — change `service_id`, `ends_at`, `notes` without changing status; emits `booking.updated`.
 - `schedule_booking.reschedule(id, new_start, new_end?)`
-- `schedule_booking.cancel(id, reason?)` / `schedule_booking.confirm(id)` / `schedule_booking.complete(id)` / `schedule_booking.no_show(id)`
+- `schedule_booking.cancel(id, reason?)` — `reason` is free-form; conventional values: `client_cancelled`, `pro_cancelled`, `no_response`, `declined`, `deleted` (used when the user "deletes" a booking; the row is preserved for audit and finance).
+- `schedule_booking.confirm(id)` / `schedule_booking.complete(id)` / `schedule_booking.no_show(id)`
 
 ## Availability validation
 
@@ -57,7 +59,7 @@ UI decides how to surface the warning. Hard blocks (past-time creation, impossib
 ## Events emitted
 
 - `booking.created` — payload includes `source`.
-- `booking.confirmed`, `booking.rescheduled`, `booking.cancelled`, `booking.completed`, `booking.no_show`.
+- `booking.updated`, `booking.confirmed`, `booking.rescheduled`, `booking.cancelled`, `booking.completed`, `booking.no_show`.
 
 ## Depends on
 

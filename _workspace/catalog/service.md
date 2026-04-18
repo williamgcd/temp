@@ -14,7 +14,11 @@ A bookable unit of time + expertise: haircut, consultation, personal training se
 
 ## Data model
 
-- `catalog_service`: `catalog_item_id` (pk), `duration_minutes`, `buffer_before_minutes`, `buffer_after_minutes`, `eligible_staff_ids[]`, `required_resource_types[]`.
+- `catalog_service`: `catalog_item_id` (pk), `duration_minutes`, `buffer_before_minutes`, `buffer_after_minutes`, `visibility` (`public`, `private`; default `public`), `eligible_staff_ids[]`, `required_resource_types[]`.
+
+`visibility = public` exposes the service on the public booking link (`schedule-public-link`). `private` hides it from clients (admin can still book it).
+
+A service may override any field of `_workspace/schedule-policy` via `schedule_policy.set_override(workspace_id, service_id, partial)`.
 
 ## Public API
 

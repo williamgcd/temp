@@ -19,6 +19,7 @@ Answer "is this slot bookable, for whom, with what resource?" — the authoritat
 ## Public API
 
 - `schedule.available_slots({ workspace_id, service_id?, staff_id?, resource_id?, date_range })`
+- `schedule.next_free_slots({ workspace_id, duration_minutes, after?, count?, allow_overlap?, staff_id?, resource_id? })` — next N bookable slots from `after` (default now); used by the encaixe flow and Silvia's "quando tenho 1h livre".
 - `schedule.is_bookable({ staff_id?, start, end, resource_id? })` — returns `{ ok, warnings[] }`. Hard rejects only for impossible ranges; overlaps/out-of-hours are warnings honoring `schedule-policy`.
 - `schedule.update_hours(owner_type, owner_id, working_hours)`
 
@@ -40,6 +41,7 @@ Answer "is this slot bookable, for whom, with what resource?" — the authoritat
 
 - [schedule-booking](./booking.md)
 - [schedule-policy](./policy.md)
+- [schedule-public-link](./public-link.md)
 - [schedule-waitlist](./waitlist.md)
 - [schedule-blocker](./blocker.md)
 - [schedule-holiday](./holiday.md)

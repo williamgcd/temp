@@ -31,5 +31,10 @@ Groups are created as use cases are written — no empty folders up front.
 ## Index
 
 ### 02-schedule
-- [create-appointment](./02-schedule/create-appointment.md) — Sabriza marca um atendimento em 3 toques; Silvia preenche o resto.
-- [see-the-schedule](./02-schedule/see-the-schedule.md) — Ver a agenda em 3 views (Lista, Dia, Mês); Silvia empurra snapshots no tier autônomo.
+- [create-appointment](./02-schedule/create-appointment.md) — **Create**. 3 toques; Silvia preenche o resto.
+- [see-the-schedule](./02-schedule/see-the-schedule.md) — **Read**. Lista (default), Dia, Mês; Silvia empurra snapshots no tier autônomo.
+- [update-booking](./02-schedule/update-booking.md) — **Update + Delete**. Reschedule, edit fields, complete, no-show, cancel (delete = cancel com motivo `deleted`).
+- [encaixe](./02-schedule/encaixe.md) — Variante rápida do create: walk-in / "tem como hoje?".
+- [receive-booking-request](./02-schedule/receive-booking-request.md) — Inbound. Self-serve link público + WhatsApp (tier Silvia).
+- [manage-availability](./02-schedule/manage-availability.md) — Working hours, blocks, holidays.
+- [configure-policies](./02-schedule/configure-policies.md) — Lembretes, janelas, fees, depósito, buffers, granularidade, duração default, sobreposição.

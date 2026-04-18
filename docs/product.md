@@ -42,9 +42,15 @@ Same codebase, same modules. The difference is **who pulls the trigger**.
 
 Applies to **execution**.
 
-### Relationship between the two
+### 3. Silvia uses the same tools
 
-Progressive disclosure governs *configuration* (both tiers). The tier motto governs *execution* (who acts). Config grows for everyone; execution is what upgrades buy.
+Every action Sabriza can take in the app is exposed as a tool to Silvia. Silvia decides *when* to use each tool based on detection rules (incoming WhatsApp, time-of-day, observed pattern, threshold crossed); Sabriza decides *what* Silvia is allowed to invoke (autonomous-mode toggles per tool, gated by plan).
+
+There is no separate "agent path". Same module API. Different trigger. The use case docs name the user flow once; Silvia's autonomous version is a *trigger + permission* on top of that flow, not a new flow.
+
+### Relationship between the three
+
+Progressive disclosure governs *configuration* (both tiers). The tier motto governs *who executes*. The same-tools principle ensures both share one codebase: humans and Silvia call the same APIs.
 
 ## Pricing (v1)
 

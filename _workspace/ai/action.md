@@ -35,12 +35,34 @@ Close the loop between AI and the business: the AI can not just report, but take
 
 ## Example rule kinds
 
-- `inbound_whatsapp_booking` — parse WhatsApp request, propose slot, create booking on confirmation.
-- `morning_snapshot` — send a start-of-day agenda summary via chat / push.
-- `evening_summary` — send an end-of-day performance recap.
-- `empty_day_alert` — when a low-utilization day is approaching, offer to message frequent clients.
+### Inbound
+
+- `inbound_whatsapp_booking` — parse a WhatsApp request, propose a slot, create booking on confirmation. Includes urgency detection (encaixe).
+- `inbound_whatsapp_reschedule` — client asks to move; Silvia proposes new slot and reschedules.
+- `inbound_whatsapp_cancel` — client cancels; Silvia processes, applies fee if policy says so (with confirmation).
+
+### Time-based
+
+- `morning_snapshot` — start-of-day agenda summary via chat / push.
+- `evening_summary` — end-of-day performance recap.
+- `empty_day_alert` — low-utilization day approaching; offer to message frequent clients.
+- `year_start_holiday_seed` — January: propose seeding national holidays.
+
+### Detection on bookings
+
+- `no_show_detection` — booking past `ends_at + no_show_grace_minutes` with no interaction → propose `no_show`.
+- `auto_complete_suggestion` — booking past `ends_at + 30min` still `booked`/`confirmed` → propose `complete`.
 - `no_show_followup` — when `booking.no_show` fires, draft a follow-up message.
 - `post_appointment_review` — request a review N hours after `booking.completed`.
+
+### Pattern detection / suggestions
+
+- `pattern_detect_working_hours` — propose default hours after observing N consistent bookings.
+- `hours_change_conflict_alert` — when working hours change, list affected bookings and ask what to do.
+- `suggest_no_show_fee` — repeated no-shows → propose enabling `no_show_fee_cents`.
+- `suggest_min_advance_window` — short-notice surprises → propose `advance_booking_min_hours`.
+- `suggest_reschedule_policy` — frequent reschedules → propose `reschedule_window_hours` + fee.
+- `suggest_reminder_timing` — observed correlation between lead time and show-rate → propose changing `reminder_hours_before`.
 
 ## Consumed by
 
