@@ -12,6 +12,7 @@ Documentation for the modular SaaS platform. The system is organized into three 
 
 ## Design references
 
+- [Product](./docs/product.md) — audience, positioning, principles, pricing, onboarding, Silvia (the AI assistant).
 - [Personas](./docs/personas.md) — Sabriza, Júlia, Bianca. Who we're building for (solo/self BR beauty pros, v1).
 
 ## Module doc template
