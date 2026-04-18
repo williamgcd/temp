@@ -10,6 +10,10 @@ Documentation for the modular SaaS platform. The system is organized into three 
 | [`_platform`](./_platform) | Multi-tenant fabric: identities, auth, workspaces, plans, billing, LLM runtime. |
 | [`_workspace`](./_workspace) | Business domain a workspace operates: clients, schedule, catalog, finance, marketing, AI, forms, documents. |
 
+## Design references
+
+- [Personas](./docs/personas.md) — Camila, Júlia, Bianca. Who we're building for (solo/self BR beauty pros, v1).
+
 ## Module doc template
 
 Every module doc includes:
